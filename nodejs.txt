@@ -1,0 +1,7 @@
+-node.js good for server side programming.
+-one of the best thing about nodejs that it is for real time
+application like chat,game etc..
+----------------------------------------
+open cmd
+->node
+->console.log('ashu');//print text on console

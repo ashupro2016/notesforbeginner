@@ -1,0 +1,47 @@
+BIOS=basic input output system.responsibe to turn on ur 
+computer and select operating system.
+1.determine current version of bios.
+msinfo32
+Dxdiag
+2.finding correct bios update.
+Q.why current bios version?in new version ,it's
+ might contain lots of bug.
+so ,we can go in prevoius version as well to avoid bug which
+is occur in new version.
+3.secure power source.
+4.install BIOS.
+**********************************************************
+bios give lot of information like-
+give information about different part.
+1)startup+f2.
+enter in bios
+2)ram
+3)hard drive
+4)optical drive.
+5)cpu.
+****************************************************************
+
+boot config-order in which we want to start computer
+/hard drive-suppose to want install linux-we can also use usb,cd too.
+pxe booting-also known as network booting.
+...............................
+.............................
+enabling and disabling devices
+i/o device
+-wol-wake online
+-date/time
+cpu clock speed
+-virtualization
+*******************************************
+post-power on self test(check each part is running or not)
+->cpu & post bios rom
+->system timer
+->video card
+->memory
+->keyboard
+->disk drive
+************************************
+lock BIOS
+-s-password/u-password
+-lojac
+-tpm

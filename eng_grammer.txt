@@ -1,0 +1,171 @@
+- grammer
+-reading comprehension
+-cloze test
+-jumbled sentences
+-vocabulary
+------------------------------------------------------
+Q. try to correct the following sentences.
+
+1.the station is far from here.//incorrect use of far-cannot use for positive sentences ,either use for negative or interrogative sentences
+ans).the station is not far from here,how far is the station? "or"
+the station is a long away from here.
+
+2.i like her dressing sence.//correct term is "dress sense",not dressing sense
+ans)i like her dress sense.
+3.he got passing marks.//correct in american's english,but we follow british english.in british's english,he got pass marks.
+ans). he got pass marks.
+4.she teaches very good.//good is an adjective,well is an adverb..here we use word "good" to qualify verb "teach".only adverb can qualify a verb.
+ans).she teaches very well.
+5.can you suggest me a good book?//wrong usage of word "suggest".suggest cannot be followed by indirect object.so you 
+cannot use like"suggest them","suggest him","suggest me" etc.
+
+ans)can you suggest a good book to me?
+
+6.according to me,this is right.//misuse of "according to","according to" can be used with every pronoun except "me".
+ans)in my opinion,this is right.
+ 
+7.he is more intelligent than her.//acceptable only in informal language,
+if we use subjective case("he" is subjective case) before than,then u need to use subjective case after than.here "her" should replace with "she".
+she is better than she.(in formal)
+ans).he is more intelligent than she.
+
+8.he repeated her remarks word to word.// no such phrase "word to word" or "word by word" correct phrase "word for word".
+ans) he repeated her remarks word for word.
+
+9.i hate this hotel.there are a lot of boundations here.//no such words like "boundations". words are "bound" or "bounds".
+ans) i hate this hostel.there are a lot of bounds here.
+------------------------------------------------------------------------------
+            2. basics of subject and verb
+
+subject:-
+two type:- 1.singular 2.plural
+singular:-you,he,she,it ,any one name ,any singular noun(in general noun without s/es)
+
+plural:-we,you,they,more than one name,any plural noun(in general noun with s/es).
+note:"you" is considered  for both singular and plural.but it takes only "plural" verb.
+
+verb:-four type(for sake of conveince only)
+1.singular:-is,has,was,verb(1st form)+s/es
+3rd person singular subject only i.e he, she,it,name
+
+2.plural:are,have,were,verb1
+all plural subjects(you)
+
+3.common:had,did,modals
+all the subjects
+
+4.special:am
+i
+---------------------------------------------------------
+1st person,2nd person ,third person
+
+for instance ,i m talking to somebody
+then,"speaker " is the first person
+->so 1st person is "either 'i' and 'we' "
+
+and one who is front of me,and listening to what i m saying i.e,listener is the "second person".
+->so 2nd person is "you".
+
+the one who is being talked about who is neither the speaker nor the listener is the third person.
+->hence the third person would be "he","she","it" or any "name".
+
+------------------------------------------------------------------
+--use singular verb with singular 3rd person subject only i.e, he,she,it,name. 
+now, we can say
+
+1. she is.
+2.she has.
+3.she was.
+4. she plays.
+all four sentence above are correct.
+
+--use of plural verb with plural subject 
+now ,can i say
+1. they are
+2.they have.
+3.they were.
+4.they play.
+all sentence above are correct.
+
+--common verb(had,did,modals) uses for all the subjects
+so,can i say(he -singluar subject)
+1.he had.
+2. he did.
+3.he can
+all above sentence are correct.
+
+so,can i say,(they -plural subject)
+1.they had.
+2.they did.
+they can.
+
+all above sentences are correct.
+
+-------------------
+--special verb
+"am" only can be used for 'i'.
+'i' is definitely a peculier subject
+'i' cannot take verb in deifinite pattern.
+
+'i' sometime takes singular verb,plural verb and special verb
+
+i-is/am/are-use only 'am'
+i-was/were-use only 'was'
+i-has/have-use only 'have'
+i-play/plays-use only 'play'
+
+NOTE:-
+noun+s/es=plural
+verb+s/es=singular
+
+example:
+boys:-we know "boys" is plural because boy is noun.
+plays:-we know "plays" is singular verb because play is a verb.
+
+----------------------------------------------------------------------
+
+it is important that you will be able to find out subject in a sentence because verb is always in accordance of subject.
+
+Note:for finding out subject,u need to remember 3 points:
+1.who does the action?
+2.who or what is being talked about?
+3.only a noun or pronoun// can be a subject
+
+a.Meg is/are playing basketball.
+//"playing" is action,who does this action,Meg(name,third person singular subject,so we use verb "is").
+ans)Meg is playing basketball.
+
+b.They is/are going to school.
+//"going" is action,who are going,"they"(they is subject,it's plural subject,so we use plural verb.'are' is plural verb.)
+ans)they are going to school.
+
+c.He has/have done his work.
+//"done" is action,who has done,"he"('he' is subject,'he' is third person singular subject,so it will use with singular verb,"has" is singular verb.)
+ans)he has done his work.
+
+d.The price of vegetables has/have increased.
+//now,question is what is being talked about."price" for what "vegetables". so price has 
+increased. so "main sub" is price. now( 'price' is singular .so we need singular verb."has" is singular verb).
+ans)the price of vegetables has increased.
+
+
+e.Some genuine issues exist/exists with the newly adopted system and need/needs to be examined seriously.
+//again, no action being done here.
+so we need to find out,what is being talked about.
+what is exist with the newly adopted system and what is need to be examined.
+ans- issues//(therefore,"issue" is subject.because issue is plural,we need plural verb.so "issue" and "need" is plural verb.)
+
+ans).some genuine issue exist with the newly adopted system and need to be examined seriously.
+
+
+f.His konwledge of the subject is/are worth appreciating.
+//what is worth appreciating,"knowledge".
+'konwledge' is subject,since knowledge is singular,we choose singular verb,"is".
+
+ans).His knowledge of the subject is worth appreciating.
+
+g.the quality of goods was/were not good.
+// what was not good. "quality" and "goods".
+but 'quality' is not good."quality" is singular subject,so, we need singular verb('was').
+ans)the quality of goods was not good.
+ 

@@ -1,0 +1,223 @@
+"ashu";//string
+alert();func without parameter -pop up message on screen 
+alert("ashu");//with parameter
+4. Variables
+Often when programming we want to store values
+ in containers so we can use them later; these are called variables. Let’s store your name 
+in a variable, or ‘var’ for short, by typing the following:
+
+var firstName = "gregg";
+5. Variable Value
+Now we have a variable called firstName that has a string stored inside of it. Output it to see what it looks like.
+
+firstName;
+------------------------------------------------
+6. Numbers
+Great! Notice how your name printed out on the screen below, showing you the value inside the variable.
+
+So far we have only worked with 1 value type (strings), but JavaScript has many! Another example of a value type is a number. Pass any number of your choosing into the alert function. Just like a function, a number does not get quotations.
+
+alert(42);
+--------------------------------------------------
+7. Combining Numbers
+We can also do math in JavaScript! Combine any 2 numbers like so:
+
+14 + 28;
+-----------------------------------
+8. Combining Strings
+Great math skills! JavaScript not only can combine numbers — it can combine strings as well!
+
+Create an alert that combines both your name and a string, like below:
+
+alert(firstName + " is awesome!");
+--------------------------------------------------
+javascript automatically recongnize numbers
+>24
+>3+14
+>2+4
+>2*4
+>4-2
+>12/4
+>44%10
+--------------------------------------
+order of opertatiom:pemdas
+>(5+12)*3
+17*3
+51
+
+>(3*4)+3-12/2
+12+3-6
+9
+
+>(-5*6)-7*-2
+-30-(-14)
+-16
+
+>4+(8%(3+1))
+4+(8%4)
+4+0
+4
+-------------------------------------------------
+comparators:
+common number comparator used in javascript syntax:
+>6>4
+true
+>9<5
+false
+>3==4
+false
+>12!=4//(!= not equal)
+true
+>8>=-2
+true
+>10<=10
+true
+----------------------------------------
+strings:-
+javascript stores and process flat text:-
+>"raindrop on roses"//double quotes need for string,javascript recongnise string through 
+double quotes and print string.
+
+(+ operator for concatanation:)
+>"raindrops on roses"+"and"+"whiskers on kittens";
+//plus will give strings together
+give output:raindrops on roses and whiskers on kittens;
+---------------------------------------------------------------
+concatation works with numbers and their expressions,too.
+>"the meaning of life is" + 42;
+give output the meaning of life is42.//no space between "is"and "42".
+
+//we need to add our own.
+>"the meaning of life is "+42;//add space between is and "
+
+>"platform " +9+" and " + 3/4;
+give output:platform 9 and 0.75;//expression 3/4 get evaluated;
+
+>"platform" +9+ " and 3/4";
+give output:platform 9 and 3/4   //make strings out of expressions that you want to see 
+in their original format.
+-----------------------------------------------
+some characters need backslash notation in javascript strings
+>"flight #:\t921\t\tseat:\t21C"    //'\t' for next  "tab stop"
+give output:flight #: 921  seat: 21C;
+
+
+>"login password:\t\t\"C3P0R2D2\""
+"login password":  "C3P0R2D2""
+
+
+-----------------------------------
+some characters need backslash itself in the string
+>"Orign\\Destination:\tOrlando(MCO)\\london(LHR)"   // (\\) place backslash \ itself in the string
+ give output:origin\destination:  Orlando(MCQ)\london(LHR)
+
+>"Departure:\t09:55A\nArrival:\t14:55P"
+give output:Departure: 09:55A    //"\n" for new line
+Arrival : 14:55P 
+-------------------------------------------------------------------
+string comparisons:-
+checking for matching strings and alphabetical ordering.
+>"the wright brothers" == "the wright brothers"
+give output: true   //double equal will compare exact contents
+
+
+>"the wright Brothers" =="super mario brothers"
+give output:false //
+ 
+> "The Wright \brothers" != "the wrigth brothers"
+give output:true
+-----------------------------------------------------
+String Comparisons
+the length of strings can be accessed with the .length property
+>"sdhjdkfjdskjfklsdjfjdsfsdlkfj".length;
+value output:28
+
+>"one fish, two fish, red fish ,blue fish".lenght
+output:39  //spaces and any non-alphabetic characters are counted,too!
+----------------------------------------------------------------------------------------
+Variable discovery:
+
+Storing our values:
+javascript uses variables to store and manage data
+>var trainwishtle=3;
+ // var -variable keyword
+// transwhistle-variable name
+//= - assignment operator
+>trainwhistles
+output-3
+-------------------------------------------------------
+rules and regulations
+1. var no spaces  -no spaces in the name//return error
+2.var 3blindmice -no digit in front //give c.t error
+3. var scored_is_fine  -underscore is okay ,but often irritating
+4. var get$ -dollar signs are also cool.. 
+5.var $_$ -slightly stupid,but technically legal
+6. var goodNameHere-begin with lowercase,later words capitalized,"camel case"
+7. var mortalkombat2- fatality!!
+----------------------------------------
+changing variable contents
+
+want to change a variable's value? it's your lucky day.
+
+>var trainwishtles=3
+>trainwhistles
+output-3
+
+>trainwhistles=9;// notice:no 'var' keyword this time,because javascript already "knows" about the variable.
+
+>trainwhistles
+output:9
+
+>trainwhistles=trainwhistles+3  //use current value of trainwhistles(9)+3;
+>trainwhistles
+output:12
+
+>trainwhistles+=3;//same operation, different syntax
+>trainwhistles
+output:15
+
+>trainwhistles=trainwhistles*2;
+>trainwhistles
+output:30
+
+>trainwhistles*=2;//same multiply operation,different syntax
+output:60
+------------------------------------------------------------------
+using variables
+
+variable names also act as substitutes for the data they point to
+
+>trainwhistles=3;
+>"all of our trains have"+trainwhistles+"whistles!"
+output-all of our trains have 3 whistles!
+
+>"But the Pollack 9000 has "+(trainwhistles*3)+"!"
+output-"But the Pollack 9000 has 9!"
+
+>trainwhistles=3
+
+>var pollack9000=trainwhistles*3
+>pollack9000
+output:9
+
+>"But the Pollack 9000 has "+pollack9000+ "!"
+output:But the Pollack 9000 has 9!
+
+---------------------------------------------------------------
+incrementing and decrementing
+
+a simple syntax for increasing or decreasing a variable's value by 1
+
+>trainwhistles=3
+>trianwhistles++
+>trainwhistles
+output:4
+>trianwhistles--
+>trainwhistles
+output:3 
+
+
+
+ 
+
+

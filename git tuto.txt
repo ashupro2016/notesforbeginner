@@ -1,0 +1,95 @@
+-git --version
+-git config --global user.name "Ashutosh kumar"//global use for single user-
+-git config --global user.email "ashucse2016@gmail.com"
+-git config --list//to get all data on screen
+-clear//clear all data on screen
+-git config user.email//to get email of user
+-git help//to get help
+-pwd//to see directory,where git looking for
+-cd ~//to change directory."~" use for watching home directory 
+cd ..//to go backward
+-ls//to see all file in current directory,repository mean project in "git"
+-cd C:/Users/ashu_pc/Desktop/git tutorial//to go forward
+-git init //initialize empty git repository in current dir or folder
+->ls  -la//show hidden stuff in file
+->git add .//going to add all  change in project ,it's liking taking snapshot of change ,if there anything wrong ,we can go back 
+->git commit -m "this is our first commit"//it's like message ehic inform that i have done some changes.
+->git log//its provide commit history,who did commit and when he did it
+->git log --author="Ashu"//to see commit of particular author
+->git status//compare master branch(project)with local project and find changes occur in local file.is it local file added to commit or not
+->git add second.txt//file name..adding a file is 2 step process..working copy > staging area(git add) >respository & 1-add 2-commit
+----------------------------------------------------------------------------------------------------------------------------------------------------
+/*to view change that u made in file
+
+->git diff//to see modification in code or program..:) at (working area)
+git diff --stage//to see modification in file at (staging area).	
+.........................................................................
+Q.how to delete files?
+->git rm third.txt// rm use for deleting files and after deleting plz commit
+.....................................................
+Q.how to move and rename files?//when we renamed file.git shows that we deleted old file and created new one.
+->git add (file name)//add new file name and remove old file name. 
+->git rm (file name)//rm for remove 
+
+/* easy way to rename file*/
+->git mv second.txt ashu.txt//mv for move..same as renaming file	
+->git mv ashu.txt notes/ashish.txt  //here notes is folder name and after folder name ,we are using /and new file name to rename it
+-------------------------------------------------------------------------------------------
+Q.working with an actual website?
+1.change directory to project folder
+2.->git init//to initialize empty git repository
+3.check status
+->git status
+4.add all file in git
+->git add .
+5.add commit
+->git commit -m "my first commit in this repository or project"
+----------------------------------------------------------------------------------
+Q. how to commit directly to repository?
+->git commit -am "cleaned up the html comments"//it is shortcut to add and commit changes simultaneously in files
+use above command when ur editing in multiple file is done,otherwise u have edited one file and other file is still need to be edited,then command above add both files instead of adding 
+only one file.
+"-am " skip staging area and add directly into repository.
+--------------------------------------------------------------------------------
+Q.how to get recovery of file after lots of editing?
+ans)we will move file from repository(safe) to working file(local folder in which edited files are kept).
+->git checkout -- index.html//index.html file is edited file.we are going to recover it from repository.(with the help of "checkout")
+"--" means we are dealing with branches
+----------------------------------------------------------------------------------
+Q.how to unstage a file?
+ans)make some change in file and in staging area
+-> git add .
+then see status of file
+->git status
+then type this to get filr into unstage
+->git reset HEAD index.txt//it will move file from staging area to working area
+----------------------------------------------------------------------------------------------
+Q.how to get old version from repository?
+ans)first(commit)>second(commit)>third(commit)
+how can we go from 3rd stage to 1st stage or 2nd stage.(means old version)
+----suppose we want 2nd stage.then
+first>second>third>second
+----make some change in file
+add commit
+->git commit -am "file name"
+..........................
+to get recovery type
+->git checkout 01e7dba -- index.txt//01e7dba is commit number ,we get through ->git log
+now ,commit it
+->git commit -am "undo the file"
+-----------------------------------------------------------------------------------------------------
+Q. pushing project from desktop to github repository?
+ans)
+->git remote add githubadd https://github.com/ashupro2016/tutorials.git //"githubadd" is name given by me and part which include https:// is address of github repostiory..remote use to connect this with github
+now to get know nickname of file type
+->git remote
+above cmd give u name "githubadd"
+
+......................
+make project in folder and put in desktop
+->git init //to start or initlaize empty repository
+->git commit -am "first commit"
+* to push this project in github
+use
+-> git push -u githubadd master//"-u" use for all and "push" use for move file from desktop to github and "fetch" from github to desktop
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
