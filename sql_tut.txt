@@ -859,3 +859,406 @@ SQL Server / Oracle / MS Access:
 
 ->ALTER TABLE Persons
   DROP CONSTRAINT pk_PersonID
+------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+SQL FOREIGN KEY Constraint
+A FOREIGN KEY in one table points to a PRIMARY KEY in another table.
+
+SQL FOREIGN KEY Constraint on CREATE TABLE
+The following SQL creates a FOREIGN KEY on the "P_Id" column when
+ the "Orders" table is created:
+
+MySQL:
+
+->CREATE TABLE Orders
+(
+O_Id int NOT NULL,
+OrderNo int NOT NULL,
+P_Id int,
+PRIMARY KEY (O_Id),
+FOREIGN KEY (P_Id) REFERENCES Persons(P_Id)
+)
+
+
+SQL Server / Oracle / MS Access:
+
+->CREATE TABLE Orders
+(
+O_Id int NOT NULL PRIMARY KEY,
+OrderNo int NOT NULL,
+P_Id int FOREIGN KEY REFERENCES Persons(P_Id)
+)
+
+To allow naming of a FOREIGN KEY constraint, and for defining a 
+FOREIGN KEY constraint on multiple columns, use the following SQL
+ syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+->CREATE TABLE Orders
+(
+O_Id int NOT NULL,
+OrderNo int NOT NULL,
+P_Id int,
+PRIMARY KEY (O_Id),
+CONSTRAINT fk_PerOrders FOREIGN KEY (P_Id)
+REFERENCES Persons(P_Id)
+)
+
+----------------------------------------
+SQL FOREIGN KEY Constraint on ALTER TABLE
+To create a FOREIGN KEY constraint on the "P_Id" column 
+when the "Orders" table is already created, use the 
+following SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+->ALTER TABLE Orders
+ADD FOREIGN KEY (P_Id)
+REFERENCES Persons(P_Id)
+
+To allow naming of a FOREIGN KEY constraint, and for defining 
+a FOREIGN KEY constraint on multiple columns, use the following
+ SQL syntax:
+MySQL / SQL Server / Oracle / MS Access:
+
+->ALTER TABLE Orders
+ADD CONSTRAINT fk_PerOrders
+FOREIGN KEY (P_Id)
+REFERENCES Persons(P_Id)
+
+------------------------------------------------
+To DROP a FOREIGN KEY Constraint
+To drop a FOREIGN KEY constraint, use the following SQL:
+
+MySQL:
+->ALTER TABLE Orders
+DROP FOREIGN KEY fk_PerOrders
+
+SQL Server / Oracle / MS Access:
+->ALTER TABLE Orders
+DROP CONSTRAINT fk_PerOrders
+-------------------------------------------------------------------------
+------------------------------------------------------------------------------
+SQL CHECK Constraint
+The CHECK constraint is used to limit the value range that can 
+be placed in a column.
+
+If you define a CHECK constraint on a single column it allows only
+ certain values for this column.
+
+If you define a CHECK constraint on a table it can limit the 
+values in certain columns based on values in other columns in
+ the row.
+
+SQL CHECK Constraint on CREATE TABLE
+The following SQL creates a CHECK constraint on the "P_Id"
+ column when the "Persons" table is created. The CHECK constraint
+ specifies that the column "P_Id" must only include integers 
+greater than 0.
+
+MySQL:
+
+->CREATE TABLE Persons
+(
+P_Id int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+CHECK (P_Id>0)
+)
+
+SQL Server / Oracle / MS Access:
+
+->CREATE TABLE Persons
+(
+P_Id int NOT NULL CHECK (P_Id>0),
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255)
+)
+
+To allow naming of a CHECK constraint, and for defining a CHECK 
+constraint on multiple columns, use the following SQL syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+->CREATE TABLE Persons
+(
+P_Id int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+CONSTRAINT chk_Person CHECK (P_Id>0 AND City='Sandnes')
+)
+
+
+SQL CHECK Constraint on ALTER TABLE
+To create a CHECK constraint on the "P_Id" column when the table 
+is already created, use the following SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+->ALTER TABLE Persons
+ADD CHECK (P_Id>0)
+
+
+To allow naming of a CHECK constraint, and for defining a CHECK 
+constraint on multiple columns, use the following SQL syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+
+->ALTER TABLE Persons
+ADD CONSTRAINT chk_Person CHECK (P_Id>0 AND City='Sandnes')
+
+
+
+To DROP a CHECK Constraint
+To drop a CHECK constraint, use the following SQL:
+
+SQL Server / Oracle / MS Access:
+
+->ALTER TABLE Persons
+DROP CONSTRAINT chk_Person
+
+MySQL:
+->ALTER TABLE Persons
+DROP CHECK chk_Person
+-----------------------------------------------------------------------
+------------------------------------------------------------------------
+SQL DEFAULT Constraint:
+The DEFAULT constraint is used to insert a default value into a 
+column.
+
+The default value will be added to all new records, if no other 
+value is specified.
+
+SQL DEFAULT Constraint on CREATE TABLE:
+
+The following SQL creates a DEFAULT constraint on the "City" 
+column when the "Persons" table is created:
+
+My SQL / SQL Server / Oracle / MS Access:
+
+->CREATE TABLE Persons
+(
+P_Id int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255) DEFAULT 'Sandnes'
+)
+
+The DEFAULT constraint can also be used to insert system values,
+ by using functions like GETDATE():
+
+->CREATE TABLE Orders
+(
+O_Id int NOT NULL,
+OrderNo int NOT NULL,
+P_Id int,
+OrderDate date DEFAULT GETDATE()
+)
+
+SQL DEFAULT Constraint on ALTER TABLE
+
+To create a DEFAULT constraint on the "City" column when the table
+ is already created, use the following SQL:
+
+MySQL:
+->ALTER TABLE Persons
+ALTER City SET DEFAULT 'SANDNES'
+
+SQL Server / MS Access:
+->ALTER TABLE Persons
+ALTER COLUMN City SET DEFAULT 'SANDNES'
+
+Oracle:
+->ALTER TABLE Persons
+MODIFY City DEFAULT 'SANDNES'
+
+
+
+
+To DROP a DEFAULT Constraint:-
+
+To drop a DEFAULT constraint, use the following SQL:
+
+MySQL:
+->ALTER TABLE Persons
+ALTER City DROP DEFAULT
+
+SQL Server / Oracle / MS Access:
+->ALTER TABLE Persons
+ALTER COLUMN City DROP DEFAULT
+------------------------------------------------------------------------
+-------------------------------------------------------------------------
+The CREATE INDEX statement is used to create indexes in tables.
+
+Indexes allow the database application to find data fast;
+ without reading the whole table.
+
+Indexes:
+An index can be created in a table to find data more quickly and
+ efficiently.
+
+The users cannot see the indexes, they are just used to speed up
+ searches/queries.
+
+Note: Updating a table with indexes takes more time than updating
+ a table without (because the indexes also need an update). So you
+ should only create indexes on columns (and tables) that will be 
+frequently searched against.
+
+
+SQL CREATE INDEX Syntax
+Creates an index on a table. Duplicate values are allowed:
+
+->CREATE INDEX index_name
+ON table_name (column_name)
+----------------------------
+SQL CREATE UNIQUE INDEX Syntax
+Creates a unique index on a table. Duplicate values are not allowed:
+
+
+->CREATE UNIQUE INDEX index_name
+ON table_name (column_name)
+
+Note: The syntax for creating indexes varies among different
+ databases. Therefore: Check the syntax for creating indexes in
+ your database.
+
+CREATE INDEX Example
+
+The SQL statement below creates an index named "PIndex" on the 
+"LastName" column in the "Persons" table:
+
+->CREATE INDEX PIndex
+ON Persons (LastName)
+
+If you want to create an index on a combination of columns, you
+ can list the column names within the parentheses, separated by
+ commas:
+
+->CREATE INDEX PIndex
+ON Persons (LastName, FirstName)
+--------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+SQL DROP INDEX, DROP TABLE, and DROP DATABASE
+
+Indexes, tables, and databases can easily be deleted/removed with 
+the DROP statement.
+
+The DROP INDEX Statement
+The DROP INDEX statement is used to delete an index in a table.
+
+DROP INDEX Syntax for MS Access:
+->DROP INDEX index_name ON table_name
+
+DROP INDEX Syntax for MS SQL Server:
+->DROP INDEX table_name.index_name
+
+DROP INDEX Syntax for DB2/Oracle:
+->DROP INDEX index_name
+
+DROP INDEX Syntax for MySQL:
+->ALTER TABLE table_name DROP INDEX index_name
+-------------------------------
+The DROP TABLE Statement
+
+The DROP TABLE statement is used to delete a table.
+->DROP TABLE table_name
+
+
+The DROP DATABASE Statement
+
+The DROP DATABASE statement is used to delete a database.
+
+->DROP DATABASE database_name
+--------------------------------------------
+The TRUNCATE TABLE Statement
+What if we only want to delete the data inside the table, and not 
+the table itself?
+
+Then, use the TRUNCATE TABLE statement:
+
+->TRUNCATE TABLE table_name
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+The ALTER TABLE Statement
+The ALTER TABLE statement is used to add, delete, or modify 
+columns in an existing table.
+
+SQL ALTER TABLE Syntax
+To add a column in a table, use the following syntax:
+
+->ALTER TABLE table_name
+ADD column_name datatype
+
+To delete a column in a table, use the following syntax (notice
+ that some database systems don't allow deleting a column):
+
+->ALTER TABLE table_name
+DROP COLUMN column_name
+
+
+To change the data type of a column in a table, use the following syntax:
+
+SQL Server / MS Access:
+
+->ALTER TABLE table_name
+ALTER COLUMN column_name datatype
+
+My SQL / Oracle (prior version 10G):
+
+->ALTER TABLE table_name
+MODIFY COLUMN column_name datatype
+
+Oracle 10G and later:
+
+->ALTER TABLE table_name
+MODIFY column_name datatype
+
+
+
+SQL ALTER TABLE Example
+
+Look at the "Persons" table:
+
+Now we want to add a column named "DateOfBirth" in the "Persons" 
+table.
+
+We use the following SQL statement:
+
+->ALTER TABLE Persons
+ADD DateOfBirth date
+
+Notice that the new column, "DateOfBirth", is of type date and is 
+going to hold a date. The data type specifies what type of data 
+the column can hold.
+
+
+Change Data Type Example
+Now we want to change the data type of the column named
+ "DateOfBirth" in the "Persons" table.
+
+We use the following SQL statement:
+
+->ALTER TABLE Persons
+ALTER COLUMN DateOfBirth year
+
+Notice that the "DateOfBirth" column is now of type year and is 
+going to hold a year in a two-digit or four-digit format.
+
+
+DROP COLUMN Example
+Next, we want to delete the column named "DateOfBirth" in the "Persons" table.
+
+We use the following SQL statement:
+
+->ALTER TABLE Persons
+DROP COLUMN DateOfBirth
+-------------------------------------------------------------------

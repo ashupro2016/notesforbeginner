@@ -6,13 +6,277 @@ The Java platform has two components:
 
 -The Java Virtual Machine
 -The Java Application Programming Interface (API)
-You've already been introduced to the Java Virtual Machine; it's the base for the Java platform and is ported onto various hardware-based platforms.
+You've already been introduced to the Java Virtual Machine; it's 
+the base for the Java platform and is ported onto various
+ hardware-based platforms.
 
 The API is a large collection of ready-made software components that 
-provide many useful capabilities. It is grouped into libraries of related classes and interfaces; 
-these libraries are known as packages.
+provide many useful capabilities. It is grouped into libraries of
+ related classes and interfaces; these libraries are known as 
+packages.
 
-As a platform-independent environment, the Java platform can be a bit slower than native code.
- However, advances in compiler and virtual machine technologies are bringing performance close to that of native code without threatening portability.
+As a platform-independent environment, the Java platform can be a 
+bit slower than native code.
+ However, advances in compiler and virtual machine technologies 
+are bringing performance close to that of native code without 
+threatening portability.
 
-The terms"Java Virtual Machine" and "JVM" mean a Virtual Machine for the Java platform.
+The terms"Java Virtual Machine" and "JVM" mean a Virtual Machine 
+for the Java platform.
+
+In the Java programming language, all source code is first written 
+in plain text files ending with the .java extension. Those source 
+files are then compiled into .class files by the javac compiler. 
+A .class file does not contain code that is native to your 
+processor; it instead contains bytecodes — the machine language 
+of the Java Virtual Machine1 (Java VM). The java launcher tool 
+then runs your application with an instance of the Java Virtual
+ Machine.
+
+The JavaFX, Swing, and Java 2D toolkits make it possible to create 
+sophisticated Graphical User Interfaces (GUIs).
+
+
+
+In the Java programming language, every application must contain a 
+main method whose signature is:
+
+public static void main(String[] args)
+The modifiers public and static can be written in either order 
+(public static or static public), but the convention is to use 
+public static as shown above. You can name the argument anything
+ you want, but most programmers choose "args" or "argv".
+
+The main method is similar to the main function in C and C++; it's 
+the entry point for your application and will subsequently invoke 
+all the other methods required by your program.
+
+The main method accepts a single argument: an array of elements of
+ type String.
+
+public static void main(String[] args)
+This array is the mechanism through which the runtime system 
+passes information to your application. For example:
+
+java MyApp arg1 arg2
+Each string in the array is called a command-line argument.
+ Command-line arguments let users affect the operation of the 
+application without recompiling it. For example, a sorting 
+program might allow the user to specify that the data be sorted 
+in descending order with this command-line argument:
+
+-descending
+The "Hello World!" application ignores its command-line arguments,
+ but you should be aware of the fact that such arguments do exist.
+
+
+Finally, the line:
+
+System.out.println("Hello World!");
+
+uses the System class from the core library to print the "Hello
+ World!" message to standard output. Portions of this library 
+(also known as the "Application Programming Interface", or "API") 
+--------------------------------------------
+What Is an Object?
+
+An object is a software bundle of related state and behavior.
+ Software objects are often used to model the real-world objects
+ that you find in everyday life. This lesson explains how state 
+and behavior are represented within an object, introduces the 
+concept of data encapsulation, and explains the benefits of 
+designing your software in this manner.
+--------------------------------------------------------
+What Is an Interface?
+
+An interface is a contract between a class and the outside world.
+ When a class implements an interface, it promises to provide the
+ behavior published by that interface. This section defines a 
+simple interface and explains the necessary changes for any class
+ that implements it.
+--------------------------------------------------------------
+What Is a Package?
+
+A package is a namespace for organizing classes and interfaces in 
+a logical manner. Placing your code into packages makes large 
+software projects easier to manage. This section explains why 
+this is useful, and introduces you to the Application Programming
+ Interface (API) provided by the Java platform.
+------------------------------------------------------------
+What Is an Object?
+Real-world objects share two characteristics: They all have state 
+and behavior. Dogs have state (name, color, breed, hungry) and 
+behavior (barking, fetching, wagging tail). Bicycles also have 
+state (current gear, current pedal cadence, current speed) and 
+behavior (changing gear, changing pedal cadence, applying brakes). 
+Identifying the state and behavior for real-world objects is a
+ great way to begin thinking in terms of object-oriented 
+programming.
+
+Software objects are conceptually similar to real-world objects: 
+they too consist of state and related behavior. An object stores 
+its state in fields (variables in some programming languages) and
+ exposes its behavior through methods (functions in some 
+programming languages). Methods operate on an object's internal 
+state and serve as the primary mechanism for object-to-object 
+communication. Hiding internal state and requiring all interaction
+ to be performed through an object's methods is known as data 
+encapsulation — a fundamental principle of object-oriented 
+programming.
+
+Consider a bicycle, for example:
+By attributing state (current speed, current pedal cadence, and 
+current gear) and providing methods for changing that state, the
+ object remains in control of how the outside world is allowed to
+ use it. For example, if the bicycle only has 6 gears, a method to
+ change gears could reject any value that is less than 1 or greater
+ than 6.
+
+Bundling code into individual software objects provides a number
+ of benefits, including:
+
+1.Modularity: The source code for an object can be written and 
+maintained independently of the source code for other objects. 
+Once created, an object can be easily passed around inside the 
+system.
+
+2.Information-hiding: By interacting only with an object's methods,
+ the details of its internal implementation remain hidden from the 
+outside world.
+3.Code re-use: If an object already exists (perhaps written by 
+another software developer), you can use that object in your 
+program. This allows specialists to implement/test/debug complex,
+ task-specific objects, which you can then trust to run in your 
+own code.
+4.Pluggability and debugging ease: If a particular object turns 
+out to be problematic, you can simply remove it from your 
+application and plug in a different object as its replacement.
+ This is analogous to fixing mechanical problems in the real world. If a bolt breaks, you replace it, not the entire machine.
+
+------------------------------------------------------
+What Is a Class?
+
+In the real world, you'll often find many individual objects all 
+of the same kind. There may be thousands of other bicycles in 
+existence, all of the same make and model. Each bicycle was built
+ from the same set of blueprints and therefore contains the same 
+components. In object-oriented terms, we say that your bicycle is
+ an instance of the class of objects known as bicycles. A class is
+ the blueprint from which individual objects are created.
+
+
+The following Bicycle class is one possible implementation of a 
+bicycle:
+
+
+class Bicycle {
+
+    int cadence = 0;
+    int speed = 0;
+    int gear = 1;
+
+    void changeCadence(int newValue) {
+         cadence = newValue;
+    }
+
+    void changeGear(int newValue) {
+         gear = newValue;
+    }
+
+    void speedUp(int increment) {
+         speed = speed + increment;   
+    }
+
+    void applyBrakes(int decrement) {
+         speed = speed - decrement;
+    }
+
+    void printStates() {
+         System.out.println("cadence:" +
+             cadence + " speed:" + 
+             speed + " gear:" + gear);
+    }
+}
+
+The fields cadence, speed, and gear represent the object's state,
+ and the methods (changeCadence, changeGear, speedUp etc.) define
+ its interaction with the outside world.
+
+You may have noticed that the Bicycle class does not contain a main
+ method. That's because it's not a complete application; it's just 
+the blueprint for bicycles that might be used in an application. 
+The responsibility of creating and using new Bicycle objects
+ belongs to some other class in your application.
+
+Here's a BicycleDemo class that creates two separate Bicycle 
+objects and invokes their methods:
+
+
+class BicycleDemo {
+    public static void main(String[] args) {
+
+        // Create two different 
+        // Bicycle objects
+        Bicycle bike1 = new Bicycle();
+        Bicycle bike2 = new Bicycle();
+
+        // Invoke methods on 
+        // those objects
+        bike1.changeCadence(50);
+        bike1.speedUp(10);
+        bike1.changeGear(2);
+        bike1.printStates();
+
+        bike2.changeCadence(50);
+        bike2.speedUp(10);
+        bike2.changeGear(2);
+        bike2.changeCadence(40);
+        bike2.speedUp(10);
+        bike2.changeGear(3);
+        bike2.printStates();
+    }
+}
+
+The output of this test prints the ending pedal cadence, speed,
+ and gear for the two bicycles:
+
+cadence:50 speed:10 gear:2
+cadence:40 speed:20 gear:3
+
+--------------------------------------------------------
+What Is Inheritance?
+
+Different kinds of objects often have a certain amount in common 
+with each other. Mountain bikes, road bikes, and tandem bikes, for
+ example, all share the characteristics of bicycles (current speed,
+ current pedal cadence, current gear). Yet each also defines 
+additional features that make them different: tandem bicycles have 
+two seats and two sets of handlebars; road bikes have drop 
+handlebars; some mountain bikes have an additional chain ring,
+ giving them a lower gear ratio.
+
+Object-oriented programming allows classes to inherit commonly used
+ state and behavior from other classes. In this example, Bicycle 
+now becomes the superclass of MountainBike, RoadBike, and 
+TandemBike. In the Java programming language, each class is
+ allowed to have one direct superclass, and each superclass has
+ the potential for an unlimited number of subclasses:
+
+The syntax for creating a subclass is simple. At the beginning of
+ your class declaration, use the extends keyword, followed by the
+ name of the class to inherit from:
+
+class MountainBike extends Bicycle {
+
+    // new fields and methods defining 
+    // a mountain bike would go here
+
+}
+
+
+This gives MountainBike all the same fields and methods as Bicycle,
+ yet allows its code to focus exclusively on the features that make
+ it unique. This makes code for your subclasses easy to read. 
+However, you must take care to properly document the state and
+ behavior that each superclass defines, since that code will not
+ appear in the source file of each subclass.
